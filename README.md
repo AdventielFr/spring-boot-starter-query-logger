@@ -1,20 +1,32 @@
 # spring-boot-starter-query-logger
 
-Starter pour spring-boot permettant de logger le nomre de requêtes effectuées sur la base de données lors de l'appel d'un endpoint d'une API.
+Starter for spring-boot allows to log the number of requests made to the database when calling an endpoint of an API.
 
 ```
-2023-07-12 21:44:48,451 INFO [http-nio-8080-exec-1] f.a.s.s.HibernateQueryLogger [HibernateQueryLogger.java:41] Number of queries executed: 737 [ ] 
-2023-07-12 21:44:48,451 INFO [http-nio-8080-exec-1] f.a.s.s.HibernateQueryLogger [HibernateQueryLogger.java:42] Time spent: 369 ms [ ] 
+Call to: CustomerController.findAllFilteredByName(..) with arguments: [Gaillard].
+Number of queries executed: 75
+Time spent: 23 ms [ ]  
 ```
 
-## Utilisation
+## Usage
 
-Ajouter la dépendance à votre _pom.xml_
+Add the dependency to your _pom.xml_
 
 ```xml
 <dependency>
     <groupId>fr.adventiel.spring-boot</groupId>
     <artifactId>spring-boot-starter-query-logger</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.0.0</version>
 </dependency>
 ```
+
+Enable it with the following property in your _application.properties_ file:
+
+```properties
+adventiel.hibernatequerylogger.enabled=true
+```
+
+## Compatibility
+
+For now, the library is only compatible with spring 2.x, due to some breaking changes in Hibernate 6.
+A version for Spring 3.x is in progress.
