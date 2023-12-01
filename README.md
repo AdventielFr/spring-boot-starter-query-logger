@@ -14,7 +14,7 @@ Add the dependency to your _pom.xml_
 
 ```xml
 <dependency>
-    <groupId>fr.adventiel.spring-boot</groupId>
+    <groupId>io.github.adventielfr</groupId>
     <artifactId>spring-boot-starter-query-logger</artifactId>
     <version>2.0.0</version>
 </dependency>
